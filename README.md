@@ -40,7 +40,7 @@ Node.js / Express (replace if using something else)
 
 # REST APIs
 Database
-MongoDB / Firebase / Supabase (use whichever you are using)
+MongoDB 
 
 # Tools 
 Git & GitHub
