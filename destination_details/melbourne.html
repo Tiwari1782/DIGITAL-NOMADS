@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Melbourne City Guide - Nomad Nexus</title>
+    <link rel="icon" href="LOGO-removebg-preview.png" />
+    <link rel="icon" href="../LOGO-removebg-preview.png" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #1a1a1a;
+        --muted: #666666;
+        --card-border: #e0e0e0;
+        --header-bg: #000000;
+        --radius: 12px;
+        --max-width: 1200px;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --primary-color: #2563eb;
+        --secondary-color: #f59e0b;
+        --success-color: #10b981;
+        --danger-color: #ef4444;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #f9fafb;
+        color: var(--fg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .header {
+        background: var(--header-bg);
+        border-bottom: 1px solid #333;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .header-container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+
+      .logo {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+
+      .brand-text {
+        font-size: 24px;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: -0.5px;
+        transition: color 0.2s ease;
+      }
+
+      .brand-text:hover {
+        color: #f0f0f0;
+      }
+
+      .nav-center {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+      }
+
+      .nav-link {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 10px 0;
+      }
+
+      .nav-link:hover {
+        color: #ffffff;
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
+
+      .nav-icons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .icon-btn {
+        background: none;
+        border: none;
+        color: #cccccc;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+      }
+
+      .icon-btn:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-1px);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 500px;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1514395462725-fb4566210144?w=1600");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 800;
+        margin: 0 0 20px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+        margin: 0 0 30px 0;
+        opacity: 0.95;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-value {
+        font-size: 32px;
+        font-weight: 700;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 60px 40px;
+      }
+
+      .breadcrumb {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 40px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .breadcrumb a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        text-decoration: underline;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+
+      .main-content {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 120px;
+        height: fit-content;
+      }
+
+      .sidebar-card {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 30px 0;
+        color: var(--fg);
+      }
+
+      .subsection-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 40px 0 20px 0;
+        color: var(--fg);
+      }
+
+      /* Overview Tabs */
+      .overview-tabs {
+        display: flex;
+        gap: 0;
+        margin: 30px 0 0 0;
+        border-bottom: 2px solid #e5e7eb;
+        overflow-x: auto;
+      }
+
+      .tab-btn {
+        background: none;
+        border: none;
+        padding: 16px 32px;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+        position: relative;
+        bottom: -2px;
+      }
+
+      .tab-btn:hover {
+        color: var(--fg);
+        background: #f9fafb;
+      }
+
+      .tab-btn.active {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      .tab-content {
+        display: none;
+        padding: 30px 0;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Costs List */
+      .costs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+      }
+
+      .cost-item {
+        display: grid;
+        grid-template-columns: 60px 1fr auto;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 30px;
+        border-bottom: 1px solid #f3f4f6;
+        transition: all 0.2s ease;
+      }
+
+      .cost-item:last-child {
+        border-bottom: none;
+      }
+
+      .cost-item:hover {
+        background: #f9fafb;
+      }
+
+      .cost-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e0f2fe;
+        border-radius: 10px;
+        color: #0284c7;
+        font-size: 22px;
+      }
+
+      .cost-label {
+        font-size: 16px;
+        color: #4b5563;
+        font-weight: 500;
+      }
+
+      .cost-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--fg);
+      }
+
+      /* Info Section */
+      .info-section {
+        line-height: 1.8;
+      }
+
+      .info-section h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 25px 0 15px 0;
+        color: var(--fg);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .info-section h4:first-child {
+        margin-top: 0;
+      }
+
+      .info-section h4 i {
+        color: var(--primary-color);
+        font-size: 20px;
+      }
+
+      .info-section ul {
+        margin: 10px 0;
+        padding-left: 25px;
+        color: var(--muted);
+      }
+
+      .info-section li {
+        margin: 8px 0;
+      }
+
+      /* Apps Grid */
+      .apps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .app-card {
+        background: #f9fafb;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+
+      .app-card:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .app-card strong {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: var(--fg);
+      }
+
+      .app-card p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* Map Container */
+      .map-container {
+        margin: 30px 0 50px 0;
+        box-shadow: var(--shadow);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      /* Score Bars */
+      .score-grid {
+        display: grid;
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .score-item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .score-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .score-label {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .score-value {
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--primary-color);
+      }
+
+      .score-bar {
+        height: 12px;
+        background: #e5e7eb;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .score-fill {
+        height: 100%;
+        border-radius: 6px;
+        transition: width 1s ease;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      }
+
+      .score-fill.high {
+        background: linear-gradient(90deg, #10b981, #059669);
+      }
+
+      .score-fill.medium {
+        background: linear-gradient(90deg, #f59e0b, #d97706);
+      }
+
+      .score-fill.low {
+        background: linear-gradient(90deg, #ef4444, #dc2626);
+      }
+
+      /* Info Cards */
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .info-card {
+        background: #f9fafb;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+      }
+
+      .info-card-icon {
+        font-size: 24px;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+      .info-card-label {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 5px;
+      }
+
+      .info-card-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--fg);
+      }
+
+      /* Pros and Cons */
+      .pros-cons-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin: 30px 0;
+      }
+
+      .pros-cons-card {
+        padding: 25px;
+        border-radius: 12px;
+        border: 2px solid;
+      }
+
+      .pros-card {
+        background: #f0fdf4;
+        border-color: #86efac;
+      }
+
+      .cons-card {
+        background: #fef2f2;
+        border-color: #fca5a5;
+      }
+
+      .pros-cons-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .pros-cons-title i {
+        font-size: 20px;
+      }
+
+      .pros-card .pros-cons-title {
+        color: #059669;
+      }
+
+      .cons-card .pros-cons-title {
+        color: #dc2626;
+      }
+
+      .pros-cons-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .pros-cons-list li {
+        padding: 8px 0 8px 30px;
+        position: relative;
+        font-size: 15px;
+      }
+
+      .pros-cons-list li:before {
+        position: absolute;
+        left: 0;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+      }
+
+      .pros-card .pros-cons-list li:before {
+        content: "\f00c";
+        color: #10b981;
+      }
+
+      .cons-card .pros-cons-list li:before {
+        content: "\f00d";
+        color: #ef4444;
+      }
+
+      /* Quick Facts */
+      .quick-facts {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 30px;
+        border-radius: 12px;
+        color: white;
+      }
+
+      .quick-facts-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+      }
+
+      .fact-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .fact-item:last-child {
+        border-bottom: none;
+      }
+
+      .fact-label {
+        opacity: 0.9;
+        font-size: 14px;
+      }
+
+      .fact-value {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      /* CTA Button */
+      .cta-card {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .cta-card h3 {
+        margin: 0 0 15px 0;
+        font-size: 22px;
+      }
+
+      .cta-card p {
+        margin: 0 0 20px 0;
+        opacity: 0.95;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: white;
+        color: #d97706;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Neighborhoods */
+      .neighborhood-grid {
+        display: grid;
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .neighborhood-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .neighborhood-card:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .neighborhood-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 20px;
+        color: var(--fg);
+      }
+
+      .neighborhood-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      .page-footer {
+        margin-top: 80px;
+        padding: 50px 40px;
+        border-top: 1px solid var(--card-border);
+        color: var(--muted);
+        font-size: 16px;
+        text-align: center;
+        background: white;
+        border-radius: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .info-grid,
+        .pros-cons-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-center {
+          display: none;
+        }
+
+        .container {
+          padding: 40px 20px;
+        }
+
+        .main-content {
+          padding: 25px;
+        }
+
+        .overview-tabs {
+          overflow-x: scroll;
+        }
+
+        .tab-btn {
+          padding: 14px 20px;
+          font-size: 14px;
+        }
+
+        .cost-item {
+          grid-template-columns: 50px 1fr auto;
+          gap: 15px;
+          padding: 15px 20px;
+        }
+
+        .cost-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+        }
+
+        .cost-label {
+          font-size: 14px;
+        }
+
+        .cost-value {
+          font-size: 16px;
+        }
+
+        .apps-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      /* Footer */
+      .footer {
+        background: #f8f9fa;
+        color: #666;
+        padding: 80px 0 40px;
+        border-top: 1px solid rgba(51, 51, 51, 0.1);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        color: #333333;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-section h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: #333333;
+      }
+
+      .footer-section a {
+        color: #666;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 12px;
+        transition: color 0.2s ease;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .footer-section a:hover {
+        color: #333333;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(51, 51, 51, 0.1);
+        transition: all 0.3s ease;
+        color: #333333;
+      }
+
+      .social-links a:hover {
+        background: #333333;
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 40px;
+        border-top: 1px solid rgba(51, 51, 51, 0.1);
+        color: #666;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo-section">
+          <img src="../white_logo.jpeg" alt="Nomad Nexus Logo" class="logo" />
+          <a href="city.html" class="brand-text">Nomad Nexus</a>
+        </div>
+        <nav class="nav-center">
+          <a href="city.html" class="nav-link">City Guides</a>
+          <a href="#" class="nav-link">Resources</a>
+          <a href="#" class="nav-link">Community</a>
+          <a href="#" class="nav-link">About</a>
+        </nav>
+        <div class="nav-icons">
+          <button class="icon-btn" aria-label="Profile" title="Profile">
+            <i class="fas fa-user"></i>
+          </button>
+          <button class="icon-btn" aria-label="Messages" title="Messages">
+            <i class="fas fa-envelope"></i>
+          </button>
+          <button
+            class="icon-btn"
+            aria-label="Notifications"
+            title="Notifications"
+          >
+            <i class="fas fa-bell"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Melbourne, Australia</h1>
+        <p class="hero-subtitle">
+          The world's most liveable city - Coffee culture, arts, and endless
+          creativity
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value">$3,400</span>
+            <span class="stat-label">Monthly Cost</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">8.5/10</span>
+            <span class="stat-label">Nomad Score</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5M</span>
+            <span class="stat-label">Population</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="city.html">Home</a>
+        <span>/</span>
+        <a href="city.html">City Guides</a>
+        <span>/</span>
+        <span>Melbourne</span>
+      </nav>
+
+      <div class="content-grid">
+        <!-- Main Content -->
+        <div class="main-content">
+          <h2 class="section-title">About Melbourne</h2>
+          <p>
+            Melbourne consistently ranks as one of the world's most liveable
+            cities, and for good reason. Australia's cultural capital offers
+            digital nomads a unique blend of cosmopolitan sophistication,
+            creative energy, and laid-back Australian lifestyle. Known for its
+            world-class coffee culture, thriving arts scene, and passionate
+            sports fans, Melbourne presents a quality of life that's hard to
+            match anywhere else.
+          </p>
+          <p>
+            While Melbourne is significantly more expensive than popular digital
+            nomad hubs in Southeast Asia or Eastern Europe, it compensates with
+            exceptional infrastructure, blazing-fast internet, excellent
+            healthcare, political stability, and a truly international
+            community. The city's famous laneways hide countless cafés perfect
+            for working, while its beaches, parks, and nearby nature provide the
+            perfect work-life balance. With a strong startup ecosystem, diverse
+            neighborhoods, and year-round cultural events, Melbourne offers
+            remote workers a premium experience in one of the world's most
+            desirable cities—though the unpredictable weather and strict visa
+            requirements are considerations to keep in mind.
+          </p>
+
+          <!-- Living in Melbourne Overview Section -->
+          <h2 class="section-title" style="margin-top: 50px">
+            Living in Melbourne Overview
+          </h2>
+
+          <!-- Tabs -->
+          <div class="overview-tabs">
+            <button class="tab-btn active" data-tab="costs">Costs</button>
+            <button class="tab-btn" data-tab="health">Health & Safety</button>
+            <button class="tab-btn" data-tab="money">Money Handling</button>
+            <button class="tab-btn" data-tab="apps">Useful Apps</button>
+            <button class="tab-btn" data-tab="weather">Weather</button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="tab-content active" id="costs">
+            <div class="costs-list">
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <div class="cost-label">Meal, Inexpensive Restaurant</div>
+                <div class="cost-value">$18.00</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-beer"></i>
+                </div>
+                <div class="cost-label">Domestic Beer (1 pint draught)</div>
+                <div class="cost-value">$9.00</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-coffee"></i>
+                </div>
+                <div class="cost-label">Flat White (Melbourne's pride)</div>
+                <div class="cost-value">$5.00</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-bread-slice"></i>
+                </div>
+                <div class="cost-label">Loaf of Fresh White Bread (1 lb)</div>
+                <div class="cost-value">$2.50</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-bottle-water"></i>
+                </div>
+                <div class="cost-label">Water (1.5 liter bottle)</div>
+                <div class="cost-value">$2.00</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-train"></i>
+                </div>
+                <div class="cost-label">One-way Ticket (Tram/Train)</div>
+                <div class="cost-value">$4.60</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="cost-label">Basic Utilities (Monthly)</div>
+                <div class="cost-value">$200.00</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-wifi"></i>
+                </div>
+                <div class="cost-label">Internet (100 Mbps+)</div>
+                <div class="cost-value">$70.00</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-dumbbell"></i>
+                </div>
+                <div class="cost-label">Fitness Club (Monthly)</div>
+                <div class="cost-value">$80.00</div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div class="cost-label">
+                  Apartment (1 bedroom) in City Centre
+                </div>
+                <div class="cost-value">$2,000.00</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="health">
+            <div class="info-section">
+              <h4><i class="fas fa-hospital"></i> Healthcare System</h4>
+              <p>
+                Australia has an excellent healthcare system. Medicare provides
+                public healthcare for citizens and permanent residents. Visitors
+                need private health insurance or travel insurance. Healthcare
+                quality is world-class, though private insurance is recommended
+                for shorter wait times and comprehensive coverage.
+              </p>
+
+              <h4><i class="fas fa-shield-alt"></i> Safety Rating</h4>
+              <p>
+                Melbourne has a safety rating of 8.5/10. Australia is one of the
+                safest countries globally with low crime rates. Melbourne is
+                very safe, though use common sense in entertainment districts
+                late at night. Public transport and streets are generally safe
+                at all hours.
+              </p>
+
+              <h4><i class="fas fa-phone-alt"></i> Emergency Numbers</h4>
+              <ul>
+                <li><strong>Emergency (Police/Fire/Ambulance):</strong> 000</li>
+                <li><strong>Non-Emergency Police:</strong> 131 444</li>
+                <li>
+                  <strong>Nurse-On-Call (health advice):</strong> 1300 606 024
+                </li>
+                <li><strong>Lifeline (crisis support):</strong> 13 11 14</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tab-content" id="money">
+            <div class="info-section">
+              <h4><i class="fas fa-dollar-sign"></i> Currency</h4>
+              <p>
+                The official currency is the Australian Dollar (AUD/$). ATMs are
+                widely available throughout Melbourne. Credit and debit cards
+                are accepted everywhere, with contactless "tap and go" being the
+                standard. Australia is moving towards a cashless society.
+              </p>
+
+              <h4><i class="fas fa-university"></i> Banking</h4>
+              <p>
+                Major banks: Commonwealth Bank, Westpac, ANZ, NAB. Opening an
+                Australian bank account typically requires proof of address and
+                identification. Online banks like Up and ING are popular for
+                no-fee accounts. International transfers can be done via Wise or
+                OFX.
+              </p>
+
+              <h4><i class="fas fa-credit-card"></i> Payment Methods</h4>
+              <ul>
+                <li>Contactless payments (tap and go) are universal</li>
+                <li>Apple Pay, Google Pay widely accepted</li>
+                <li>Credit/debit cards accepted everywhere</li>
+                <li>Cash becoming rare - some places cashless</li>
+                <li>No tipping culture (service included in prices)</li>
+                <li>EFTPOS machines everywhere</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tab-content" id="apps">
+            <div class="info-section">
+              <h4><i class="fas fa-mobile-alt"></i> Essential Apps</h4>
+              <div class="apps-grid">
+                <div class="app-card">
+                  <strong>PTV (Public Transport Victoria)</strong>
+                  <p>Essential for trams, trains & buses</p>
+                </div>
+                <div class="app-card">
+                  <strong>Uber Eats</strong>
+                  <p>Food delivery service</p>
+                </div>
+                <div class="app-card">
+                  <strong>Domain/realestate.com.au</strong>
+                  <p>Apartment & rental search</p>
+                </div>
+                <div class="app-card">
+                  <strong>Uber/DiDi</strong>
+                  <p>Ride-sharing services</p>
+                </div>
+                <div class="app-card">
+                  <strong>Up Bank</strong>
+                  <p>Modern mobile banking</p>
+                </div>
+                <div class="app-card">
+                  <strong>Lime/Neuron</strong>
+                  <p>E-scooter rentals</p>
+                </div>
+                <div class="app-card">
+                  <strong>Broadsheet</strong>
+                  <p>Discover cafés & restaurants</p>
+                </div>
+                <div class="app-card">
+                  <strong>BOM Weather</strong>
+                  <p>Bureau of Meteorology forecasts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="weather">
+            <div class="info-section">
+              <h4><i class="fas fa-cloud-sun"></i> Climate Overview</h4>
+              <p>
+                Melbourne is famous for having "four seasons in one day." The
+                temperate oceanic climate means weather can be highly
+                unpredictable. Summers are warm and can be hot, winters are cool
+                and damp. Layers are essential year-round, and carrying an
+                umbrella is wise regardless of the forecast.
+              </p>
+
+              <h4>
+                <i class="fas fa-temperature-high"></i> Average Temperatures
+              </h4>
+              <ul>
+                <li>
+                  <strong>Summer (Dec-Feb):</strong> 14-26°C (57-79°F) - Can
+                  spike to 40°C+
+                </li>
+                <li>
+                  <strong>Autumn (Mar-May):</strong> 10-20°C (50-68°F) - Most
+                  stable weather
+                </li>
+                <li>
+                  <strong>Winter (Jun-Aug):</strong> 6-14°C (43-57°F) - Cool &
+                  damp
+                </li>
+                <li>
+                  <strong>Spring (Sep-Nov):</strong> 9-20°C (48-68°F) -
+                  Unpredictable
+                </li>
+              </ul>
+
+              <h4><i class="fas fa-umbrella"></i> Best Time to Visit</h4>
+              <p>
+                March-May (autumn) offers the most stable and pleasant weather
+                with warm days and cool nights. Spring (September-November) is
+                beautiful but unpredictable. Summer can be excellent but beware
+                of extreme heat days (40°C+). Winter is cool but rarely
+                freezing.
+              </p>
+            </div>
+          </div>
+
+          <!-- Map Section -->
+          <h3 class="subsection-title" style="margin-top: 50px">
+            <i class="fas fa-map-marked-alt"></i> Explore Melbourne
+          </h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402947.5844025453!2d144.5937342!3d-37.9722342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1234567890"
+              width="100%"
+              height="450"
+              style="border: 0; border-radius: 12px"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+
+          <!-- Scores Section -->
+          <h3 class="subsection-title">Living & Working Scores</h3>
+          <div class="score-grid">
+            <div class="score-item">
+              <div class="score-header">
+                <span class="score-label">
+                  <i class="fas fa-users"></i> Nomad Friendly
+                </span>
+                <span class="score-value">8.5/10</span>
+              </div>
+              <div class="score-bar">
+                <div class="score-fill high" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span class="score-label">
+                  <i class="fas fa-dollar-sign"></i> Value for Money
+                </span>
+                <span class="score-value">5.0/10</span>
+              </div>
+              <div class="score-bar">
+                <div class="score-fill low" style="width: 50%"></div>
+              </div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span class="score-label">
+                  <i class="fas fa-wifi"></i> Internet Speed
+                </span>
+                <span class="score-value">9.2/10</span>
+              </div>
+              <div class="score-bar">
+                <div class="score-fill high" style="width: 92%"></div>
+              </div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span class="score-label">
+                  <i class="fas fa-briefcase"></i> Coworking Spaces
+                </span>
+                <span class="score-value">8.8/10</span>
+              </div>
+              <div class="score-bar">
+                <div class="score-fill high" style="width: 88%"></div>
+              </div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span class="score-label">
+                  <i class="fas fa-heart"></i> Quality of Life
+                </span>
+                <span class="score-value">9.3/10</span>
+              </div>
+              <div class="score-bar">
+                <div class="score-fill high" style="width: 93%"></div>
+              </div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span class="score-label">
+                  <i class="fas fa-shield-alt"></i> Safety
+                </span>
+                <span class="score-value">8.5/10</span>
+              </div>
+              <div class="score-bar">
+                <div class="score-fill high" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cost Breakdown -->
+          <h3 class="subsection-title">Cost of Living</h3>
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="info-card-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="info-card-label">1BR Apartment (CBD)</div>
+              <div class="info-card-value">$2,000/mo</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <div class="info-card-label">Meal (Restaurant)</div>
+              <div class="info-card-value">$18-28</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <div class="info-card-label">Flat White</div>
+              <div class="info-card-value">$5.00</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="info-card-label">Monthly Myki Pass</div>
+              <div class="info-card-value">$163</div>
+            </div>
+          </div>
+
+          <!-- Pros and Cons -->
+          <h3 class="subsection-title">Pros & Cons</h3>
+          <div class="pros-cons-grid">
+            <div class="pros-cons-card pros-card">
+              <h4 class="pros-cons-title">
+                <i class="fas fa-thumbs-up"></i>
+                Pros
+              </h4>
+              <ul class="pros-cons-list">
+                <li>Consistently ranked world's most liveable city</li>
+                <li>Exceptional coffee culture and food scene</li>
+                <li>World-class arts, culture, and music</li>
+                <li>Excellent public transportation system</li>
+                <li>Very high safety and political stability</li>
+                <li>Beautiful beaches and nature nearby</li>
+                <li>Friendly, multicultural population</li>
+                <li>Strong tech and startup ecosystem</li>
+                <li>Outstanding work-life balance culture</li>
+                <li>Clean, green, and well-maintained city</li>
+              </ul>
+            </div>
+
+            <div class="pros-cons-card cons-card">
+              <h4 class="pros-cons-title">
+                <i class="fas fa-thumbs-down"></i>
+                Cons
+              </h4>
+              <ul class="pros-cons-list">
+                <li>Very expensive cost of living</li>
+                <li>High rental costs even in outer suburbs</li>
+                <li>Extremely strict visa requirements</li>
+                <li>Isolated location (far from everything)</li>
+                <li>Unpredictable weather (four seasons in one day)</li>
+                <li>Limited nightlife compared to Asian cities</li>
+                <li>Expensive domestic travel within Australia</li>
+                <li>Can feel slow-paced for some</li>
+                <li>Time zone challenges with Europe/Americas</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Best Neighborhoods -->
+          <h3 class="subsection-title">Best Neighborhoods for Nomads</h3>
+          <div class="neighborhood-grid">
+            <div class="neighborhood-card">
+              <h3><i class="fas fa-map-marker-alt"></i> Fitzroy</h3>
+              <p>
+                Melbourne's hipster central with bohemian vibe, excellent cafés,
+                vintage shops, and street art. Walking distance to CBD, thriving
+                creative scene. More affordable than CBD while maintaining urban
+                energy and character.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3><i class="fas fa-map-marker-alt"></i> Melbourne CBD</h3>
+              <p>
+                Central location with famous laneways, countless cafés,
+                coworking spaces, and easy transport. Expensive but convenient.
+                Great for those wanting to be in the heart of everything with
+                maximum walkability.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3><i class="fas fa-map-marker-alt"></i> St Kilda</h3>
+              <p>
+                Beachside suburb with relaxed atmosphere, bars, restaurants, and
+                Luna Park. More laid-back than CBD with beach access. Perfect
+                for those wanting coastal lifestyle with easy tram access to
+                city center.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3><i class="fas fa-map-marker-alt"></i> South Yarra</h3>
+              <p>
+                Upscale neighborhood with Chapel Street shopping, excellent
+                restaurants, and beautiful botanic gardens nearby. More refined
+                and expensive but offers sophisticated urban living close to
+                CBD.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3><i class="fas fa-map-marker-alt"></i> Carlton</h3>
+              <p>
+                Historic Italian quarter with Lygon Street's restaurant scene,
+                Melbourne University area, and beautiful parks. Great mix of
+                students, professionals, and families. Intellectual atmosphere
+                with good value.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3><i class="fas fa-map-marker-alt"></i> Richmond</h3>
+              <p>
+                Diverse neighborhood with Vietnamese food hub (Victoria Street),
+                trendy Bridge Road, and close to MCG. More affordable with
+                excellent transport, multicultural atmosphere, and authentic
+                local feel.
+              </p>
+            </div>
+          </div>
+
+          <!-- Getting Around -->
+          <h3 class="subsection-title">Getting Around</h3>
+          <p>
+            Melbourne has an excellent public transportation system that makes
+            car ownership unnecessary in the inner city:
+          </p>
+          <ul style="line-height: 1.8; color: var(--muted)">
+            <li>
+              <strong>Trams:</strong> World's largest tram network with 250km of
+              routes. Iconic and convenient, many routes free in CBD
+            </li>
+            <li>
+              <strong>Trains:</strong> Metro network connects suburbs to CBD,
+              runs until midnight (1:30am Fri/Sat)
+            </li>
+            <li>
+              <strong>Buses:</strong> Complement tram and train network, serve
+              outer suburbs
+            </li>
+            <li>
+              <strong>Free Tram Zone:</strong> All trams within CBD are free to
+              ride
+            </li>
+            <li>
+              <strong>Cycling:</strong> Extensive bike paths and lanes
+              throughout the city
+            </li>
+            <li><strong>Walking:</strong> Inner Melbourne is very walkable</li>
+          </ul>
+          <p>
+            Get a Myki card for all public transport ($6 card, then
+            pay-as-you-go or unlimited passes). Monthly Zone 1+2 pass costs
+            $163. Download the PTV app for real-time information. Uber and DiDi
+            available but expensive for daily use.
+          </p>
+
+          <!-- Visa Information -->
+          <h3 class="subsection-title">Visa & Legal Requirements</h3>
+          <p>
+            <strong>Important:</strong> Australia has strict visa requirements.
+            Working remotely for foreign companies on a tourist visa is
+            technically illegal, though enforcement is unclear.
+          </p>
+          <p>
+            <strong>Visa Options for Digital Nomads:</strong>
+          </p>
+          <ul style="line-height: 1.8; color: var(--muted)">
+            <li>
+              <strong>Tourist Visa (Subclass 600/651):</strong> 3-12 months,
+              cannot work (even remotely, technically)
+            </li>
+            <li>
+              <strong>Working Holiday Visa (Subclass 417/462):</strong> 18-30
+              years old from eligible countries, 12 months, can work
+            </li>
+            <li>
+              <strong>Skilled Independent Visa (Subclass 189):</strong>
+              Points-based permanent residency for skilled workers
+            </li>
+            <li>
+              <strong>Temporary Skill Shortage (Subclass 482):</strong> Requires
+              Australian employer sponsorship
+            </li>
+            <li>
+              <strong>Business Innovation Visa (Subclass 188):</strong> For
+              entrepreneurs with significant capital
+            </li>
+          </ul>
+          <p>
+            <strong>Reality Check:</strong> Australia does not have a digital
+            nomad visa and is unlikely to create one soon. The Working Holiday
+            Visa is the best option for eligible younger nomads. Otherwise, you
+            need employer sponsorship or significant capital. Consult an
+            immigration lawyer for your specific situation.
+          </p>
+
+          <!-- Coworking Spaces -->
+          <h3 class="subsection-title">Top Coworking Spaces</h3>
+          <p>
+            Melbourne has a thriving coworking scene with options ranging from
+            budget-friendly to premium:
+          </p>
+          <div class="neighborhood-grid">
+            <div class="neighborhood-card">
+              <h3>
+                <i class="fas fa-briefcase" style="color: #2563eb"></i> WeWork
+              </h3>
+              <p>
+                Multiple premium locations including Collins Street and South
+                Melbourne. Professional atmosphere, excellent amenities, global
+                network. From AUD $550-900/month. Great for established
+                professionals and networking.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3>
+                <i class="fas fa-briefcase" style="color: #2563eb"></i> Hub
+                Australia
+              </h3>
+              <p>
+                Local Australian coworking with multiple Melbourne locations.
+                Community-focused with regular events, hot desks from AUD
+                $45/day. More affordable than WeWork with authentic Melbourne
+                vibe and strong local network.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3>
+                <i class="fas fa-briefcase" style="color: #2563eb"></i> Inspire9
+              </h3>
+              <p>
+                Startup-focused coworking in Richmond with collaborative
+                atmosphere. Home to accelerators and tech companies. Great for
+                entrepreneurs and those seeking to connect with Melbourne's
+                startup ecosystem.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3>
+                <i class="fas fa-briefcase" style="color: #2563eb"></i> The
+                Commons
+              </h3>
+              <p>
+                Beautiful spaces in Collingwood and South Melbourne. Focus on
+                sustainability and community. Premium feel with excellent
+                coffee, wellness programs, and designed for wellbeing. AUD
+                $600-800/month.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3>
+                <i class="fas fa-briefcase" style="color: #2563eb"></i> Cluster
+              </h3>
+              <p>
+                Tech and creative coworking in CBD with modern design. Strong
+                community of developers, designers, and digital professionals.
+                Regular workshops and networking events. Good balance of price
+                and quality.
+              </p>
+            </div>
+
+            <div class="neighborhood-card">
+              <h3>
+                <i class="fas fa-briefcase" style="color: #2563eb"></i> Local
+                Cafés
+              </h3>
+              <p>
+                Melbourne's café culture means thousands of laptop-friendly
+                spots. Try Brother Baba Budan, Market Lane, Dukes Coffee
+                Roasters, or Patricia Coffee. Fast WiFi, excellent coffee, and
+                perfect ambiance for working.
+              </p>
+            </div>
+          </div>
+
+          <!-- Coffee Culture -->
+          <h3 class="subsection-title">Melbourne's Coffee Culture</h3>
+          <p>
+            Melbourne is widely considered to have the best coffee culture
+            outside Italy:
+          </p>
+          <ul style="line-height: 1.8; color: var(--muted)">
+            <li>
+              <strong>Flat White Capital:</strong> Melbourne perfected this
+              espresso drink (rival claims from Sydney/Auckland)
+            </li>
+            <li>
+              <strong>Café Standards:</strong> Even average cafés serve
+              excellent coffee - baristas are highly trained
+            </li>
+            <li>
+              <strong>Laneway Cafés:</strong> Hidden gems in Melbourne's famous
+              laneways and alleyways
+            </li>
+            <li>
+              <strong>Third Wave Coffee:</strong> Single-origin, specialty
+              roasts, latte art as standard
+            </li>
+            <li>
+              <strong>Café Working:</strong> Widely accepted to work from cafés
+              with laptop (order regularly)
+            </li>
+            <li>
+              <strong>No Starbucks Culture:</strong> International chains
+              largely failed here - locals prefer independents
+            </li>
+          </ul>
+
+          <!-- Food & Dining -->
+          <h3 class="subsection-title">Food & Dining Scene</h3>
+          <p>
+            Melbourne is Australia's culinary capital with incredible diversity:
+          </p>
+          <ul style="line-height: 1.8; color: var(--muted)">
+            <li>
+              <strong>Multicultural Cuisine:</strong> Authentic Greek, Italian,
+              Vietnamese, Chinese, Indian, Lebanese, and more
+            </li>
+            <li>
+              <strong>Brunch Culture:</strong> Melbourne is obsessed with brunch
+              - expect queues at popular spots
+            </li>
+            <li>
+              <strong>Budget Eats:</strong> Asian restaurants, food courts,
+              bakeries ($10-15 meals)
+            </li>
+            <li>
+              <strong>Mid-Range:</strong> Excellent restaurants for $20-40 per
+              person
+            </li>
+            <li>
+              <strong>Fine Dining:</strong> Several Michelin-quality restaurants
+              (though no Michelin guide yet)
+            </li>
+            <li>
+              <strong>Markets:</strong> Queen Victoria Market, South Melbourne
+              Market for fresh produce
+            </li>
+            <li>
+              <strong>Grocery Shopping:</strong> Coles, Woolworths (mainstream);
+              Aldi (budget); Queen Vic Market (fresh)
+            </li>
+          </ul>
+
+          <!-- Sports & Events -->
+          <h3 class="subsection-title">Sports & Cultural Events</h3>
+          <p>Melbourne is Australia's sporting and cultural capital:</p>
+          <ul style="line-height: 1.8; color: var(--muted)">
+            <li>
+              <strong>AFL (Australian Football):</strong> Religion in Melbourne
+              - experience a game at MCG (100,000+ fans)
+            </li>
+            <li>
+              <strong>Australian Open:</strong> Grand Slam tennis tournament
+              every January
+            </li>
+            <li>
+              <strong>Melbourne Cup:</strong> "The race that stops a nation" -
+              horse racing, public holiday (November)
+            </li>
+            <li>
+              <strong>Grand Prix:</strong> Formula 1 race at Albert Park (March)
+            </li>
+            <li>
+              <strong>Comedy Festival:</strong> Massive international comedy
+              event (March-April)
+            </li>
+            <li>
+              <strong>White Night:</strong> All-night arts festival (though
+              paused recently)
+            </li>
+            <li>
+              <strong>Live Music:</strong> Excellent music scene across all
+              genres, live shows weekly
+            </li>
+          </ul>
+
+          <!-- Work Culture -->
+          <h3 class="subsection-title">Work Culture & Community</h3>
+          <p>Melbourne's work culture is relaxed yet professional:</p>
+          <ul style="line-height: 1.8; color: var(--muted)">
+            <li>
+              <strong>Work-Life Balance:</strong> Australians value personal
+              time - 9-5 culture, rarely work late
+            </li>
+            <li>
+              <strong>Laid-Back Attitude:</strong> Less corporate formality than
+              US/UK, but professional
+            </li>
+            <li>
+              <strong>Coffee Meetings:</strong> Business often discussed over
+              coffee in cafés
+            </li>
+            <li>
+              <strong>Startup Scene:</strong> Growing tech ecosystem with
+              regular meetups and events
+            </li>
+            <li>
+              <strong>Networking Groups:</strong> Many Meetup groups for
+              freelancers, entrepreneurs, digital nomads
+            </li>
+            <li>
+              <strong>Time Zone Challenges:</strong> Working with Europe (8-10hr
+              behind) or US (14-19hr behind) can be difficult
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <!-- Quick Facts -->
+          <div class="sidebar-card quick-facts">
+            <h3 class="quick-facts-title">Quick Facts</h3>
+            <div class="fact-item">
+              <span class="fact-label">Country</span>
+              <span class="fact-value">Australia</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Currency</span>
+              <span class="fact-value">Australian Dollar (AUD)</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Language</span>
+              <span class="fact-value">English</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Time Zone</span>
+              <span class="fact-value">AEDT (UTC+11)</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Population</span>
+              <span class="fact-value">5 million</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Climate</span>
+              <span class="fact-value">Temperate Oceanic</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Best Season</span>
+              <span class="fact-value">Mar-May (Autumn)</span>
+            </div>
+          </div>
+
+          <!-- CTA Card -->
+          <div class="sidebar-card cta-card">
+            <h3>Ready for Melbourne?</h3>
+            <p>Experience the world's most liveable city!</p>
+            <a href="#" class="cta-button">Find Accommodation</a>
+          </div>
+
+          <!-- Related Cities -->
+          <div class="sidebar-card">
+            <h3 style="margin: 0 0 20px 0; font-size: 18px">Similar Cities</h3>
+            <div style="display: flex; flex-direction: column; gap: 15px">
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  text-decoration: none;
+                  color: var(--fg);
+                  transition: all 0.3s ease;
+                "
+              >
+                <div
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    background: #e5e7eb;
+                    border-radius: 8px;
+                  "
+                ></div>
+                <div>
+                  <div style="font-weight: 600">Sydney</div>
+                  <div style="font-size: 13px; color: var(--muted)">
+                    Australia
+                  </div>
+                </div>
+              </a>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  text-decoration: none;
+                  color: var(--fg);
+                  transition: all 0.3s ease;
+                "
+              >
+                <div
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    background: #e5e7eb;
+                    border-radius: 8px;
+                  "
+                ></div>
+                <div>
+                  <div style="font-weight: 600">Auckland</div>
+                  <div style="font-size: 13px; color: var(--muted)">
+                    New Zealand
+                  </div>
+                </div>
+              </a>
+              <a
+                href="#"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  text-decoration: none;
+                  color: var(--fg);
+                  transition: all 0.3s ease;
+                "
+              >
+                <div
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    background: #e5e7eb;
+                    border-radius: 8px;
+                  "
+                ></div>
+                <div>
+                  <div style="font-weight: 600">Vancouver</div>
+                  <div style="font-size: 13px; color: var(--muted)">Canada</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Footer -->
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>Community</h3>
+            <a href="#">Join Now</a>
+            <a href="#">Member Benefits</a>
+            <a href="#">Success Stories</a>
+            <a href="#">Events</a>
+          </div>
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <a href="#">City Guides</a>
+            <a href="#">Remote Jobs</a>
+            <a href="#">Travel Insurance</a>
+            <a href="#">Co-working Spaces</a>
+          </div>
+          <div class="footer-section">
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="#">Newsletter</a>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Nomad Nexus. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+      // Tab switching functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const targetTab = this.getAttribute("data-tab");
+
+            // Remove active class from all buttons and contents
+            tabBtns.forEach((b) => b.classList.remove("active"));
+            tabContents.forEach((c) => c.classList.remove("active"));
+
+            // Add active class to clicked button and corresponding content
+            this.classList.add("active");
+            document.getElementById(targetTab).classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

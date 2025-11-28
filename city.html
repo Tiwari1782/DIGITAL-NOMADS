@@ -1,0 +1,2688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>City Guides - Nomad Nexus</title>
+    <link rel="icon" href="LOGO-removebg-preview.png" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="city.css" />
+  </head>
+  <body>
+    <!-- Header with Logo -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo-section">
+          <img src="white_logo.jpeg" alt="Nomad Nexus Logo" class="logo" />
+          <a href="#" class="brand-text">Nomad Nexus</a>
+        </div>
+        <nav class="nav-center">
+          <a href="#" class="nav-link">City Guides</a>
+          <a href="#" class="nav-link">Resources</a>
+          <a href="#" class="nav-link">Community</a>
+          <a href="#" class="nav-link">About</a>
+        </nav>
+        <div class="nav-icons">
+          <button class="icon-btn" aria-label="Profile" title="Profile">
+            <i class="fas fa-user"></i>
+          </button>
+          <button
+            class="icon-btn has-notification"
+            aria-label="Messages"
+            title="Messages"
+          >
+            <i class="fas fa-envelope"></i>
+          </button>
+          <button
+            class="icon-btn has-notification"
+            aria-label="Notifications"
+            title="Notifications"
+          >
+            <i class="fas fa-bell"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container" role="main">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h1 class="hero-title">Nomad Nexus City Guides</h1>
+        <p class="hero-subtitle">
+          Discover the world's best cities for remote work and digital nomad
+          life. Find your perfect destination with detailed guides and insider
+          tips from experienced nomads.
+        </p>
+      </section>
+
+      <!-- Search and Filters -->
+      <div class="controls" role="region" aria-label="Search and filters">
+        <div class="search-section">
+          <input
+            class="search"
+            type="search"
+            placeholder="Search city or country..."
+            id="search"
+            aria-label="Search cities and countries"
+          />
+          <button class="btn" id="reset">Reset Filters</button>
+        </div>
+
+        <div class="filter-section">
+          <p class="filter-label">Filter by Region</p>
+          <div
+            class="region-filters"
+            id="regionFilters"
+            role="group"
+            aria-label="Region filters"
+          >
+            <button class="region-filter active" data-region="all">
+              All Regions
+            </button>
+            <button class="region-filter" data-region="africa">Africa</button>
+            <button class="region-filter" data-region="asia">Asia</button>
+            <button class="region-filter" data-region="central-america">
+              Central America
+            </button>
+            <button class="region-filter" data-region="europe">Europe</button>
+            <button class="region-filter" data-region="north-america">
+              North America
+            </button>
+            <button class="region-filter" data-region="oceania">Oceania</button>
+            <button class="region-filter" data-region="south-america">
+              South America
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- City Grid -->
+      <section aria-label="City guides grid" class="grid" id="grid">
+        <!-- Berlin -->
+        <article
+          class="card"
+          data-city="Berlin"
+          data-country="Germany"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/berlin.html">
+            <div class="card-media">
+              <img
+                src="destinations/berlin.jpg"
+                alt="Berlin skyline"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Berlin, Germany</h3>
+                <div class="city-price">$1800 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="75"
+                        style="--metric-width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="82"
+                        style="--metric-width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Lisbon -->
+        <article
+          class="card"
+          data-city="Lisbon"
+          data-country="Portugal"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/lisbon.html">
+            <div class="card-media">
+              <img
+                src="destinations/lisbon.jpg"
+                alt="Lisbon view"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Lisbon, Portugal</h3>
+                <div class="city-price">$1600 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- London -->
+        <article
+          class="card"
+          data-city="London"
+          data-country="United Kingdom"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/london.html">
+            <div class="card-media">
+              <img
+                src="destinations/london.jpg"
+                alt="London"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">London, UK</h3>
+                <div class="city-price">$3200 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="55"
+                        style="--metric-width: 55%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="95"
+                        style="--metric-width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- New York -->
+        <article
+          class="card"
+          data-city="New York"
+          data-country="USA"
+          data-region="north-america"
+          tabindex="0"
+        >
+          <a href="destination_details/new-york.html">
+            <div class="card-media">
+              <img
+                src="destinations/new-york.jpg"
+                alt="New York"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">New York, USA</h3>
+                <div class="city-price">$4000 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="78"
+                        style="--metric-width: 78%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="50"
+                        style="--metric-width: 50%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="93"
+                        style="--metric-width: 93%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="97"
+                        style="--metric-width: 97%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Paris -->
+        <!-- Paris -->
+        <article
+          class="card"
+          data-city="Paris"
+          data-country="France"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/paris.html">
+            <div class="card-media">
+              <img
+                src="destinations/paris.jpg"
+                alt="Paris"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Paris, France</h3>
+                <div class="city-price">$2800 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="75"
+                        style="--metric-width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="60"
+                        style="--metric-width: 60%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Melbourne -->
+        <!-- Melbourne -->
+        <article
+          class="card"
+          data-city="Melbourne"
+          data-country="Australia"
+          data-region="oceania"
+          tabindex="0"
+        >
+          <a href="destination_details/melbourne.html">
+            <div class="card-media">
+              <img
+                src="destinations/melbourne.jpg"
+                alt="Melbourne"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Melbourne, Australia</h3>
+                <div class="city-price">$2400 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="82"
+                        style="--metric-width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="65"
+                        style="--metric-width: 65%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="93"
+                        style="--metric-width: 93%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Amsterdam -->
+        <article
+          class="card"
+          data-city="Amsterdam"
+          data-country="Netherlands"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/amsterdam.html">
+            <div class="card-media">
+              <img
+                src="destinations/amsterdam.jpg"
+                alt="Amsterdam"
+                onerror="this.style.display='none'"
+              />
+              <!-- <div class="img-placeholder">
+        Drop <code>images/amsterdam.jpg</code> here
+      </div> -->
+
+              <div class="city-info-static">
+                <h3 class="city-title">Amsterdam, Netherlands</h3>
+                <div class="city-price">$2600 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="62"
+                        style="--metric-width: 62%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="95"
+                        style="--metric-width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Seoul -->
+        <article
+          class="card"
+          data-city="Seoul"
+          data-country="South Korea"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/seoul.html">
+            <div class="card-media">
+              <img
+                src="destinations/seoul.jpg"
+                alt="Seoul"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Seoul, South Korea</h3>
+                <div class="city-price">$2200 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="78"
+                        style="--metric-width: 78%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="70"
+                        style="--metric-width: 70%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="98"
+                        style="--metric-width: 98%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Tokyo -->
+        <article
+          class="card"
+          data-city="Tokyo"
+          data-country="Japan"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/tokyo.html">
+            <div class="card-media">
+              <img
+                src="destinations/tokyo.jpg"
+                alt="Tokyo"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Tokyo, Japan</h3>
+                <div class="city-price">$2800 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="75"
+                        style="--metric-width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="65"
+                        style="--metric-width: 65%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="95"
+                        style="--metric-width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Singapore -->
+        <article
+          class="card"
+          data-city="Singapore"
+          data-country="Singapore"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/singapore.html">
+            <div class="card-media">
+              <img
+                src="destinations/Singapore.jpg"
+                alt="Singapore"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Singapore</h3>
+                <div class="city-price">$3500 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="58"
+                        style="--metric-width: 58%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="97"
+                        style="--metric-width: 97%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="95"
+                        style="--metric-width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="94"
+                        style="--metric-width: 94%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Dubai -->
+        <article
+          class="card"
+          data-city="Dubai"
+          data-country="UAE"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/dubai.html">
+            <div class="card-media">
+              <img
+                src="destinations/dubai.jpg"
+                alt="Dubai"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Dubai, UAE</h3>
+                <div class="city-price">$3000 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="68"
+                        style="--metric-width: 68%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="93"
+                        style="--metric-width: 93%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Bali -->
+        <article
+          class="card"
+          data-city="Bali"
+          data-country="Indonesia"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/bali.html">
+            <div class="card-media">
+              <img
+                src="destinations/bali.jpg"
+                alt="Bali"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Bali, Indonesia</h3>
+                <div class="city-price">$1200 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="95"
+                        style="--metric-width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="70"
+                        style="--metric-width: 70%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Barcelona -->
+        <article
+          class="card"
+          data-city="Barcelona"
+          data-country="Spain"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/barcelona.html">
+            <div class="card-media">
+              <img
+                src="destinations/barcelona.jpg"
+                alt="Barcelona"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Barcelona, Spain</h3>
+                <div class="city-price">$2000 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="75"
+                        style="--metric-width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="89"
+                        style="--metric-width: 89%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Mexico City -->
+        <article
+          class="card"
+          data-city="Mexico City"
+          data-country="Mexico"
+          data-region="north-america"
+          tabindex="0"
+        >
+          <a href="destination_details/mexico-city.html">
+            <div class="card-media">
+              <img
+                src="destinations/mexico-city.jpg"
+                alt="Mexico City"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Mexico City, Mexico</h3>
+                <div class="city-price">$1400 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="83"
+                        style="--metric-width: 83%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="78"
+                        style="--metric-width: 78%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Cape Town -->
+        <article
+          class="card"
+          data-city="Cape Town"
+          data-country="South Africa"
+          data-region="africa"
+          tabindex="0"
+        >
+          <a href="destination_details/cape-town.html">
+            <div class="card-media">
+              <img
+                src="destinations/cape-town.jpg"
+                alt="Cape Town"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Cape Town, South Africa</h3>
+                <div class="city-price">$1500 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="83"
+                        style="--metric-width: 83%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="82"
+                        style="--metric-width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="78"
+                        style="--metric-width: 78%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Bangkok -->
+        <article
+          class="card"
+          data-city="Bangkok"
+          data-country="Thailand"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/bangkok.html">
+            <div class="card-media">
+              <img
+                src="destinations/bangkok.jpg"
+                alt="Bangkok"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Bangkok, Thailand</h3>
+                <div class="city-price">$1100 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="82"
+                        style="--metric-width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Buenos Aires -->
+        <article
+          class="card"
+          data-city="Buenos Aires"
+          data-country="Argentina"
+          data-region="south-america"
+          tabindex="0"
+        >
+          <a href="destination_details/buenos-aires.html">
+            <div class="card-media">
+              <img
+                src="destinations/Buenos-aires.jpg"
+                alt="Buenos Aires"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Buenos Aires, Argentina</h3>
+                <div class="city-price">$1300 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="82"
+                        style="--metric-width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="84"
+                        style="--metric-width: 84%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Istanbul -->
+        <article
+          class="card"
+          data-city="Istanbul"
+          data-country="Turkey"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/istanbul.html">
+            <div class="card-media">
+              <img
+                src="destinations/istanbul.jpg"
+                alt="Istanbul"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Istanbul, Turkey</h3>
+                <div class="city-price">$1400 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="83"
+                        style="--metric-width: 83%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="78"
+                        style="--metric-width: 78%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Prague -->
+        <article
+          class="card"
+          data-city="Prague"
+          data-country="Czech Republic"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/prague.html">
+            <div class="card-media">
+              <img
+                src="destinations/prague.jpg"
+                alt="Prague"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Prague, Czech Republic</h3>
+                <div class="city-price">$1700 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="80"
+                        style="--metric-width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Medellín -->
+        <article
+          class="card"
+          data-city="Medellín"
+          data-country="Colombia"
+          data-region="south-america"
+          tabindex="0"
+        >
+          <a href="destination_details/medellin.html">
+            <div class="card-media">
+              <img
+                src="destinations/medellin.jpg"
+                alt="Medellín"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Medellín, Colombia</h3>
+                <div class="city-price">$1000 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="93"
+                        style="--metric-width: 93%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="95"
+                        style="--metric-width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="86"
+                        style="--metric-width: 86%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Chiang Mai -->
+        <article
+          class="card"
+          data-city="Chiang Mai"
+          data-country="Thailand"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/chiang-mai.html">
+            <div class="card-media">
+              <img
+                src="destinations/chiang-mai.jpg"
+                alt="Chiang Mai"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Chiang Mai, Thailand</h3>
+                <div class="city-price">$800 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="97"
+                        style="--metric-width: 97%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="98"
+                        style="--metric-width: 98%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="93"
+                        style="--metric-width: 93%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="89"
+                        style="--metric-width: 89%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Montreal -->
+        <article
+          class="card"
+          data-city="Montreal"
+          data-country="Canada"
+          data-region="north-america"
+          tabindex="0"
+        >
+          <a href="destination_details/montreal.html">
+            <div class="card-media">
+              <img
+                src="destinations/montreal.jpg"
+                alt="Montreal"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Montreal, Canada</h3>
+                <div class="city-price">$2100 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="82"
+                        style="--metric-width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="70"
+                        style="--metric-width: 70%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="91"
+                        style="--metric-width: 91%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Ho Chi Minh City -->
+        <article
+          class="card"
+          data-city="Ho Chi Minh City"
+          data-country="Vietnam"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/ho-chi-minh.html">
+            <div class="card-media">
+              <img
+                src="destinations/ho-chin.jpg"
+                alt="Ho Chi Minh City"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Ho Chi Minh City, Vietnam</h3>
+                <div class="city-price">$900 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="89"
+                        style="--metric-width: 89%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="94"
+                        style="--metric-width: 94%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="86"
+                        style="--metric-width: 86%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="84"
+                        style="--metric-width: 84%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="81"
+                        style="--metric-width: 81%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Copenhagen -->
+        <article
+          class="card"
+          data-city="Copenhagen"
+          data-country="Denmark"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/copenhagen.html">
+            <div class="card-media">
+              <img
+                src="destinations/copenhagen.jpg"
+                alt="Copenhagen"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Copenhagen, Denmark</h3>
+                <div class="city-price">$3000 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="83"
+                        style="--metric-width: 83%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="58"
+                        style="--metric-width: 58%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="96"
+                        style="--metric-width: 96%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="97"
+                        style="--metric-width: 97%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Austin -->
+        <article
+          class="card"
+          data-city="Austin"
+          data-country="USA"
+          data-region="north-america"
+          tabindex="0"
+        >
+          <a href="destination_details/austin.html">
+            <div class="card-media">
+              <img
+                src="destinations/austin.jpg"
+                alt="Austin"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Austin, USA</h3>
+                <div class="city-price">$2600 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="65"
+                        style="--metric-width: 65%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="94"
+                        style="--metric-width: 94%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="92"
+                        style="--metric-width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Dublin -->
+        <article
+          class="card"
+          data-city="Dublin"
+          data-country="Ireland"
+          data-region="europe"
+          tabindex="0"
+        >
+          <a href="destination_details/dublin.html">
+            <div class="card-media">
+              <img
+                src="destinations/dublin.jpg"
+                alt="Dublin"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Dublin, Ireland</h3>
+                <div class="city-price">$2700 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="84"
+                        style="--metric-width: 84%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="62"
+                        style="--metric-width: 62%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="91"
+                        style="--metric-width: 91%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="86"
+                        style="--metric-width: 86%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="90"
+                        style="--metric-width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Taipei -->
+        <article
+          class="card"
+          data-city="Taipei"
+          data-country="Taiwan"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/taipei.html">
+            <div class="card-media">
+              <img
+                src="destinations/taipei.jpg"
+                alt="Taipei"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Taipei, Taiwan</h3>
+                <div class="city-price">$1600 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="83"
+                        style="--metric-width: 83%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="96"
+                        style="--metric-width: 96%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="89"
+                        style="--metric-width: 89%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="91"
+                        style="--metric-width: 91%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Kuala Lumpur -->
+        <article
+          class="card"
+          data-city="Kuala Lumpur"
+          data-country="Malaysia"
+          data-region="asia"
+          tabindex="0"
+        >
+          <a href="destination_details/kuala-lumpur.html">
+            <div class="card-media">
+              <img
+                src="destinations/kuala-lumpur.jpg"
+                alt="Kuala Lumpur"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Kuala Lumpur, Malaysia</h3>
+                <div class="city-price">$1000 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="86"
+                        style="--metric-width: 86%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="91"
+                        style="--metric-width: 91%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="83"
+                        style="--metric-width: 83%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- San José -->
+        <article
+          class="card"
+          data-city="San José"
+          data-country="Costa Rica"
+          data-region="central-america"
+          tabindex="0"
+        >
+          <a href="destination_details/san-jose.html">
+            <div class="card-media">
+              <img
+                src="destinations/san-jose.jpg"
+                alt="San José"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">San José, Costa Rica</h3>
+                <div class="city-price">$1500 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="91"
+                        style="--metric-width: 91%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="78"
+                        style="--metric-width: 78%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="84"
+                        style="--metric-width: 84%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="82"
+                        style="--metric-width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Panama City -->
+        <article
+          class="card"
+          data-city="Panama City"
+          data-country="Panama"
+          data-region="central-america"
+          tabindex="0"
+        >
+          <a href="destination_details/panama-city.html">
+            <div class="card-media">
+              <img
+                src="destinations/panama.jpg"
+                alt="Panama City"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Panama City, Panama</h3>
+                <div class="city-price">$1800 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="75"
+                        style="--metric-width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="87"
+                        style="--metric-width: 87%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="85"
+                        style="--metric-width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="84"
+                        style="--metric-width: 84%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Guatemala City -->
+        <article
+          class="card"
+          data-city="Guatemala City"
+          data-country="Guatemala"
+          data-region="central-america"
+          tabindex="0"
+        >
+          <a href="destination_details/guatemala-city.html">
+            <div class="card-media">
+              <img
+                src="destinations/guatamelo.jpg"
+                alt="Guatemala City"
+                onerror="this.style.display='none'"
+              />
+
+              <div class="city-info-static">
+                <h3 class="city-title">Guatemala City, Guatemala</h3>
+                <div class="city-price">$1100 / Month</div>
+              </div>
+
+              <div class="city-metrics-overlay">
+                <div class="city-metrics">
+                  <div class="metric-item">
+                    <div class="metric-label">Nomad Friendly</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="76"
+                        style="--metric-width: 76%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Value for Money</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="88"
+                        style="--metric-width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Internet</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="78"
+                        style="--metric-width: 78%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Workspaces</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="74"
+                        style="--metric-width: 74%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="metric-item">
+                    <div class="metric-label">Quality of Living</div>
+                    <div class="metric-bar">
+                      <div
+                        class="metric-fill"
+                        data-value="75"
+                        style="--metric-width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Playa del Carmen -->
+        <article
+          class="card"
+          data-city="Playa del Carmen"
+          data-country="Mexico"
+          data-region="central-america"
+          tabindex="0"
+        >
+          <div class="card-media">
+            <img
+              src="destinations/playa-del-carmen.jpg"
+              alt="Playa del Carmen"
+              onerror="this.style.display='none'"
+            />
+            <!-- <div class="img-placeholder">
+              Drop <code>images/playadelcarmen.jpg</code> here
+            </div> -->
+
+            <div class="city-info-static">
+              <h3 class="city-title">Playa del Carmen, Mexico</h3>
+              <div class="city-price">$1600 / Month</div>
+            </div>
+
+            <div class="city-metrics-overlay">
+              <div class="city-metrics">
+                <div class="metric-item">
+                  <div class="metric-label">Nomad Friendly</div>
+                  <div class="metric-bar">
+                    <div
+                      class="metric-fill"
+                      data-value="94"
+                      style="--metric-width: 94%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">Value for Money</div>
+                  <div class="metric-bar">
+                    <div
+                      class="metric-fill"
+                      data-value="82"
+                      style="--metric-width: 82%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">Internet</div>
+                  <div class="metric-bar">
+                    <div
+                      class="metric-fill"
+                      data-value="83"
+                      style="--metric-width: 83%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">Workspaces</div>
+                  <div class="metric-bar">
+                    <div
+                      class="metric-fill"
+                      data-value="86"
+                      style="--metric-width: 86%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">Quality of Living</div>
+                  <div class="metric-bar">
+                    <div
+                      class="metric-fill"
+                      data-value="88"
+                      style="--metric-width: 88%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>Community</h3>
+            <a href="#">Join Now</a>
+            <a href="#">Member Benefits</a>
+            <a href="#">Success Stories</a>
+            <a href="#">Events</a>
+          </div>
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <a href="city.html">City Guides</a>
+            <a href="#">Remote Jobs</a>
+            <a href="#">Travel Insurance</a>
+            <a href="#">Co-working Spaces</a>
+          </div>
+          <div class="footer-section">
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="#">Newsletter</a>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Nomad Nexus. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="city.js"></script>
+  </body>
+</html>

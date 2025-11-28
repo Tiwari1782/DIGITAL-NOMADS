@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad Nexus - Airline Reviews</title>
+    <link rel="icon" href="LOGO-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="airline_guides.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img class="logo-placeholder" src="white_logo.jpeg" alt="Nomad Nexus Logo">
+                <div class="brand-name">Nomad Nexus</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#airlines">Airlines</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="Profile" title="Profile">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="icon-btn has-notification" aria-label="Messages" title="Messages">
+                    <i class="fas fa-envelope"></i>
+                </button>
+                <button class="icon-btn has-notification" aria-label="Notifications" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1 class="page-title">Airline Reviews</h1>
+            <p class="page-subtitle">Discover honest reviews from fellow digital nomads about airlines worldwide. Make informed decisions for your next journey.</p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <input type="text" class="search-box" placeholder="Search city or country...">
+            <button class="reset-btn">Reset Filters</button>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <button class="filter-btn active">All Airlines</button>
+            <button class="filter-btn">Budget</button>
+            <button class="filter-btn">Premium</button>
+            <button class="filter-btn">Long Haul</button>
+            <button class="filter-btn">Regional</button>
+            <button class="filter-btn">5 Stars</button>
+        </section>
+
+        <!-- Reviews Grid -->
+        <section class="reviews-grid">
+            <div class="review-card">
+                <div class="airline-header">
+                    <div class="airline-image">
+                        [Logo]
+                    </div>
+                    <div class="airline-info">
+                        <h3>American Airlines</h3>
+                        <div class="airline-route">NYC → London</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star empty"></div>
+                    </div>
+                    <span class="rating-score">4.0/5</span>
+                </div>
+                <p class="review-text">Great service on my flight from NYC to London. The staff was friendly and the food was surprisingly good for economy class. WiFi worked well throughout the flight.</p>
+                <div class="review-meta">
+                    <span class="reviewer-name">Sarah Johnson</span>
+                    <span class="review-date">2 days ago</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="airline-header">
+                    <div class="airline-image">
+                        [Logo]
+                    </div>
+                    <div class="airline-info">
+                        <h3>Lufthansa</h3>
+                        <div class="airline-route">Berlin → Frankfurt</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <span class="rating-score">5.0/5</span>
+                </div>
+                <p class="review-text">Exceptional experience flying business class to Frankfurt. Excellent service, comfortable seats, and amazing food. Highly recommend for long-haul flights.</p>
+                <div class="review-meta">
+                    <span class="reviewer-name">Mike Chen</span>
+                    <span class="review-date">5 days ago</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="airline-header">
+                    <div class="airline-image">
+                        [Logo]
+                    </div>
+                    <div class="airline-info">
+                        <h3>British Airways</h3>
+                        <div class="airline-route">London → Paris</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star empty"></div>
+                        <div class="star empty"></div>
+                    </div>
+                    <span class="rating-score">3.0/5</span>
+                </div>
+                <p class="review-text">Average experience. Flight was on time but the service felt rushed. Seats were comfortable enough for a short European flight.</p>
+                <div class="review-meta">
+                    <span class="reviewer-name">Emma Wilson</span>
+                    <span class="review-date">1 week ago</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="airline-header">
+                    <div class="airline-image">
+                        [Logo]
+                    </div>
+                    <div class="airline-info">
+                        <h3>Singapore Airlines</h3>
+                        <div class="airline-route">Singapore → Tokyo</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <span class="rating-score">5.0/5</span>
+                </div>
+                <p class="review-text">World-class service as always. The cabin crew went above and beyond to make the 14-hour flight comfortable. Entertainment system was excellent.</p>
+                <div class="review-meta">
+                    <span class="reviewer-name">David Kim</span>
+                    <span class="review-date">1 week ago</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="airline-header">
+                    <div class="airline-image">
+                        [Logo]
+                    </div>
+                    <div class="airline-info">
+                        <h3>Ryanair</h3>
+                        <div class="airline-route">Dublin → Barcelona</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star empty"></div>
+                        <div class="star empty"></div>
+                        <div class="star empty"></div>
+                    </div>
+                    <span class="rating-score">2.0/5</span>
+                </div>
+                <p class="review-text">You get what you pay for. Very budget experience but the flight was on time and got me to my destination safely. No frills service.</p>
+                <div class="review-meta">
+                    <span class="reviewer-name">Lisa Brown</span>
+                    <span class="review-date">2 weeks ago</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="airline-header">
+                    <div class="airline-image">
+                        [Logo]
+                    </div>
+                    <div class="airline-info">
+                        <h3>Qatar Airways</h3>
+                        <div class="airline-route">Doha → Sydney</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <span class="rating-score">5.0/5</span>
+                </div>
+                <p class="review-text">Incredible service and attention to detail. The Qsuite business class is phenomenal. Doha airport is also a great transit hub.</p>
+                <div class="review-meta">
+                    <span class="reviewer-name">Alex Rodriguez</span>
+                    <span class="review-date">2 weeks ago</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <section class="pagination">
+            <a href="#" class="page-btn">« Previous</a>
+            <a href="#" class="page-btn active">1</a>
+            <a href="page2.html" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <a href="#" class="page-btn">4</a>
+            <a href="#" class="page-btn">5</a>
+            <a href="page2.html" class="page-btn">Next »</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Nomad Nexus</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#press">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Reviews</h3>
+                <ul>
+                    <li><a href="#airlines">Airlines</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#submit">Submit Review</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#guides">Travel Guides</a></li>
+                    <li><a href="#tips">Travel Tips</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nomad Nexus. All rights reserved. Made for digital nomads, by digital nomads.</p>
+        </div>
+    </footer>
+
+    <script src="airline_guides.js">
+        
+    </script>
+</body>
+</html>
