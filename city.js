@@ -57,7 +57,7 @@
 
       switch (buttonType) {
         case "Profile":
-          alert("Profile clicked - implement your profile logic here");
+          
           break;
         case "Messages":
           alert("Messages clicked - implement your messages logic here");
