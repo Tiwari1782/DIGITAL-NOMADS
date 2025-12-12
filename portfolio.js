@@ -187,3 +187,92 @@ window.addEventListener('load', () => {
     // Add any initialization code here
     console.log('Portfolio website loaded successfully! ');
 });
+
+// Floating Action Button & Modal
+const fabButton = document. getElementById('fabButton');
+const postModal = document.getElementById('postModal');
+const closeModal = document.getElementById('closeModal');
+const cancelBtn = document.getElementById('cancelBtn');
+const postForm = document.getElementById('postForm');
+const imageInput = document.getElementById('activityImage');
+const imagePreview = document.getElementById('imagePreview');
+
+// Open modal
+fabButton.addEventListener('click', () => {
+  postModal.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent background scroll
+});
+
+// Close modal function
+function closePostModal() {
+  postModal.classList.remove('active');
+  document.body.style.overflow = 'auto'; // Restore scroll
+  postForm.reset();
+  imagePreview.classList.remove('active');
+  imagePreview.innerHTML = '';
+}
+
+// Close modal events
+closeModal.addEventListener('click', closePostModal);
+cancelBtn.addEventListener('click', closePostModal);
+
+// Close modal when clicking outside
+postModal. addEventListener('click', (e) => {
+  if (e.target === postModal) {
+    closePostModal();
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && postModal.classList.contains('active')) {
+    closePostModal();
+  }
+});
+
+// Image preview
+imageInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      imagePreview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
+      imagePreview.classList.add('active');
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// Form submission
+postForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Get form values
+  const title = document.getElementById('activityTitle').value;
+  const description = document.getElementById('activityDescription').value;
+  const category = document.getElementById('activityCategory').value;
+  const image = imageInput.files[0];
+
+  // Create activity object
+  const activity = {
+    title:  title,
+    description: description,
+    category: category,
+    timestamp: new Date().toISOString(),
+    image: image ?  image.name : null
+  };
+
+  // Log to console (you can replace this with actual posting logic)
+  console.log('New Activity Posted:', activity);
+
+  // Show success message
+  alert('Activity posted successfully!  🎉');
+
+  // Close modal and reset form
+  closePostModal();
+
+  // Here you would typically: 
+  // 1. Send data to a server/database
+  // 2. Update the UI with the new activity
+  // 3. Store in localStorage or state management
+});
