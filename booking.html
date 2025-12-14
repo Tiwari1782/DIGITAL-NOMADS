@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad Nexus - Book Flights</title>
+    <link rel="icon" href="LOGO-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img class="logo-placeholder" src="white_logo.jpeg" alt="Nomad Nexus Logo">
+                <div class="brand-name">Nomad Nexus</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#airlines">Airlines</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="Profile" title="Profile">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="icon-btn has-notification" aria-label="Messages" title="Messages">
+                    <i class="fas fa-envelope"></i>
+                </button>
+                <button class="icon-btn has-notification" aria-label="Notifications" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Find Your Next Adventure at the Lowest Price</h1>
+            <p class="hero-subtitle">Tailored for Digital Nomads | Flexible Dates | Best Deals Guaranteed</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" id="searchSection">
+        <div class="container">
+            <div class="search-card">
+                <!-- Trip Type Selector -->
+                <div class="trip-type-selector">
+                    <button class="trip-type-btn active" data-type="round-trip">
+                        <i class="fas fa-exchange-alt"></i> Round Trip
+                    </button>
+                    <button class="trip-type-btn" data-type="one-way">
+                        <i class="fas fa-long-arrow-alt-right"></i> One Way
+                    </button>
+                    <button class="trip-type-btn" data-type="multi-city">
+                        <i class="fas fa-route"></i> Multi-City
+                    </button>
+                </div>
+
+                <!-- Search Form -->
+                <form class="search-form" id="bookingForm">
+                    <div class="form-row">
+                        <!-- From -->
+                        <div class="form-group">
+                            <label for="from">
+                                <i class="fas fa-plane-departure"></i> From
+                            </label>
+                            <input type="text" id="from" placeholder="City or Airport" required>
+                        </div>
+
+                        <!-- Swap Button -->
+                        <button type="button" class="swap-btn" aria-label="Swap locations">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+
+                        <!-- To -->
+                        <div class="form-group">
+                            <label for="to">
+                                <i class="fas fa-plane-arrival"></i> To
+                            </label>
+                            <input type="text" id="to" placeholder="City or Airport" required>
+                        </div>
+
+                        <!-- Departure Date -->
+                        <div class="form-group">
+                            <label for="departure">
+                                <i class="fas fa-calendar-alt"></i> Departure
+                            </label>
+                            <input type="date" id="departure" required>
+                        </div>
+
+                        <!-- Return Date -->
+                        <div class="form-group" id="returnDateGroup">
+                            <label for="return">
+                                <i class="fas fa-calendar-check"></i> Return
+                            </label>
+                            <input type="date" id="return">
+                        </div>
+
+                        <!-- Passengers -->
+                        <div class="form-group">
+                            <label for="passengers">
+                                <i class="fas fa-user-friends"></i> Passengers
+                            </label>
+                            <select id="passengers">
+                                <option value="1">1 Passenger</option>
+                                <option value="2">2 Passengers</option>
+                                <option value="3">3 Passengers</option>
+                                <option value="4">4 Passengers</option>
+                                <option value="5">5+ Passengers</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Nomad Features -->
+                    <div class="nomad-features">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="flexibleDates">
+                            <span><i class="fas fa-calendar-week"></i> Flexible Dates (±3 days)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remoteWork">
+                            <span><i class="fas fa-wifi"></i> WiFi Priority</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="baggage">
+                            <span><i class="fas fa-suitcase"></i> Extra Baggage</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="directOnly">
+                            <span><i class="fas fa-plane"></i> Direct Flights Only</span>
+                        </label>
+                    </div>
+
+                    <!-- Search Button -->
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i> Search Flights
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Results Section (Hidden Initially) -->
+    <section class="results-section" id="resultsSection" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <h2 id="resultsTitle">Available Flights</h2>
+                <button class="modify-search-btn" id="modifySearchBtn">
+                    <i class="fas fa-edit"></i> Modify Search
+                </button>
+            </div>
+
+            <div class="results-filters">
+                <div class="filter-group">
+                    <label>Sort by:</label>
+                    <select id="sortFilter">
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="duration">Duration</option>
+                        <option value="departure">Departure Time</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Stops:</label>
+                    <select id="stopsFilter">
+                        <option value="all">All Flights</option>
+                        <option value="direct">Direct Only</option>
+                        <option value="1-stop">1 Stop</option>
+                        <option value="2-stops">2+ Stops</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="flightResults" class="flight-results">
+                <!-- Flight cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="featuresSection">
+        <div class="container">
+            <h2 class="section-title">Why Digital Nomads Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Lowest Price Guarantee</h3>
+                    <p>We scan 500+ airlines and travel sites to find you the best deals. If you find cheaper, we'll refund the difference.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Flexible Booking</h3>
+                    <p>Free date changes and cancellations on most bookings. Perfect for the unpredictable nomad lifestyle.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Multi-City Routes</h3>
+                    <p>Optimize your travels with smart multi-city routing. Visit 3+ destinations for less than the price of two. </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Remote Work Ready</h3>
+                    <p>Filter flights by WiFi availability, power outlets, and workspace quality based on real nomad reviews.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Travel Insurance</h3>
+                    <p>Comprehensive coverage designed for long-term travelers with visa flexibility and equipment protection.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Real humans available anytime, anywhere.  We understand time zones and urgent rebooking needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section class="popular-routes-section" id="popularRoutesSection">
+        <div class="container">
+            <h2 class="section-title">Popular Nomad Routes</h2>
+            <div class="routes-grid">
+                <div class="route-card" data-from="New York" data-to="Bali">
+                    <img src="https://i.pinimg.com/originals/65/aa/34/65aa342d48dda35ba4d597ab1f50dc74.jpg" alt="Bali">
+                    <div class="route-content">
+                        <div class="route-cities">
+                            <span>New York</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Bali</span>
+                        </div>
+                        <div class="route-price">From $487</div>
+                        <div class="route-details">
+                            <span><i class="fas fa-clock"></i> 18h 30m</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-card" data-from="London" data-to="Dubai">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=250&fit=crop" alt="Dubai">
+                    <div class="route-content">
+                        <div class="route-cities">
+                            <span>London</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Dubai</span>
+                        </div>
+                        <div class="route-price">From $342</div>
+                        <div class="route-details">
+                            <span><i class="fas fa-clock"></i> 7h 15m</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-card" data-from="Berlin" data-to="Barcelona">
+                    <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=250&fit=crop" alt="Barcelona">
+                    <div class="route-content">
+                        <div class="route-cities">
+                            <span>Berlin</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Barcelona</span>
+                        </div>
+                        <div class="route-price">From $89</div>
+                        <div class="route-details">
+                            <span><i class="fas fa-clock"></i> 2h 30m</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-card" data-from="Toronto" data-to="Lisbon">
+                    <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&h=250&fit=crop" alt="Lisbon">
+                    <div class="route-content">
+                        <div class="route-cities">
+                            <span>Toronto</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Lisbon</span>
+                        </div>
+                        <div class="route-price">From $456</div>
+                        <div class="route-details">
+                            <span><i class="fas fa-clock"></i> 8h 45m</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-card" data-from="Singapore" data-to="Bangkok">
+                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&h=250&fit=crop" alt="Thailand">
+                    <div class="route-content">
+                        <div class="route-cities">
+                            <span>Singapore</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Bangkok</span>
+                        </div>
+                        <div class="route-price">From $124</div>
+                        <div class="route-details">
+                            <span><i class="fas fa-clock"></i> 2h 20m</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-card" data-from="Los Angeles" data-to="Mexico City">
+                    <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=400&h=250&fit=crop" alt="Mexico City">
+                    <div class="route-content">
+                        <div class="route-cities">
+                            <span>Los Angeles</span>
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Mexico City</span>
+                        </div>
+                        <div class="route-price">From $178</div>
+                        <div class="route-details">
+                            <span><i class="fas fa-clock"></i> 3h 50m</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Alert Section -->
+    <section class="price-alert-section">
+        <div class="container">
+            <div class="price-alert-card">
+                <div class="alert-content">
+                    <h2><i class="fas fa-bell"></i> Never Miss a Deal</h2>
+                    <p>Get instant alerts when prices drop on your favorite routes</p>
+                </div>
+                <form class="alert-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Set Alert</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nomad Nexus</h4>
+                    <p>Your trusted partner for affordable travel, designed specifically for digital nomads worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Price Guarantee</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Travel Tips</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nomad Nexus.  All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="booking.js"></script>
+</body>
+</html>
